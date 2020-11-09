@@ -1,0 +1,9 @@
+We have 3 main problems here
+1. three for a dollar (so what’s the price if I buy 4, or 5?)
+2. $1.99/pound (so what does 4 ounces cost?)
+3. buy two, get one free (so does the third item have a price?)
+
+for the first and third problem we will be needing a price calculator which will calculate the price before promotion and after promotion
+So for this I created two interfaces with name caluclator and converter so in future if we need to convert into anyother we can just implement new method
+There can be different promotion type we need to create promotion interface which can carry different type of promotions
+We will be needing a factory method which will map the promotion to its type
