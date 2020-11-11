@@ -22,8 +22,7 @@ public class PriceCalculator {
 
     public Mono<Double> getTotal(double price, double numOfItems, String promoName, double x, double y, String converterName){
         return applyPromotion.getPromotionPrice(promoName, price, numOfItems, x, y)
-                .map(promoPrice -> calculatePrice.calculatePrice(promoPrice, numOfItems))
-                .doOnNext(promoPrice -> log.info("the promoprice is: {}", promoPrice))
+                .doOnNext(promoPrice -> log.info("the total price after applying promotion {} is: {}", promoName, promoPrice))
                 .map(totalPrice -> convertCurrency.getConvertedCurrency(converterName, totalPrice))
                 .doOnError(error -> log.error("the error is: {}", error));
     }

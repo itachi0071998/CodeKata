@@ -14,7 +14,7 @@ public class BuyXGetYFree implements Promotions {
     public Mono<Double> promoPrice(double price, double numOfItems, double xItem, double yItem) {
         if (xItem >= numOfItems) return Mono.just(price);
         int freeUnits = (int) ((int) (numOfItems/(xItem+yItem))*yItem);
-        return Mono.just((numOfItems*price - freeUnits*price)/numOfItems);
+        return Mono.just((numOfItems*price - freeUnits*price));
     }
 
     @Override
