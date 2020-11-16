@@ -5,22 +5,21 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
-import java.util.ArrayList;
+
+import java.util.List;
 
 
 @Component
 @RequiredArgsConstructor
 public class BinarySearchType1 implements Search {
     @Override
-    public Mono<Integer> searchIndex(ArrayList<Integer> arr, Integer integerToFind) {
-        int mid = arr.size()/2;
+    public Mono<Integer> searchIndex(List<Integer> arr, Integer integerToFind) {
         int l = 0;
         int r = arr.size()-1;
         while(r>l){
-            mid = (l+r)/2;
-            if(arr.get(mid) == integerToFind) return Mono.just(mid+1);
-            if(arr.get(mid)>integerToFind) r = mid-1;
-            if(arr.get(mid)<integerToFind) l = mid+1;
+            if(arr.get((l+r)/2) == integerToFind) return Mono.just((l+r)/2 + 1);
+            if(arr.get((l+r)/2)>integerToFind) r = (l+r)/2 - 1;
+            if(arr.get((l+r)/2)<integerToFind) l = (l+r)/2 + 1;
         }
         return Mono.just(-1);
     }

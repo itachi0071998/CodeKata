@@ -2,7 +2,6 @@ package com.codekata.karatechop.factory;
 
 
 import com.codekata.karatechop.helper.Search;
-import com.codekata.supermarketpricing.interfaces.Converter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

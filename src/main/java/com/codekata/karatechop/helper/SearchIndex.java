@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @Component
 @RequiredArgsConstructor
@@ -14,9 +14,8 @@ public class SearchIndex {
     @Autowired
     private SearchFactory searchFactory;
 
-    public Mono<Integer> getIndex(ArrayList<Integer> arr, int integerToFind, String type){
+    public Mono<Integer> getIndex(List<Integer> arr, int integerToFind, String type){
         String searchName = "com.codekata.karatechop.searchtype." + type;
-        Search searchType = searchFactory.getSearch(searchName);
-        return searchType.searchIndex(arr, integerToFind);
+        return searchFactory.getSearch(searchName).searchIndex(arr, integerToFind);
     }
 }

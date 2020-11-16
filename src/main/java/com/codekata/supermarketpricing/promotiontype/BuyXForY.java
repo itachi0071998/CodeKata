@@ -7,9 +7,7 @@ public class BuyXForY implements Promotions {
     @Override
     public Mono<Double> promoPrice(double price, double numOfItems, double x, double y) {
         if(numOfItems<x) return Mono.just(price);
-        int offerUnits = (int) (numOfItems/x);
-        double priceForOneUnit = ((offerUnits * y) + ((numOfItems - offerUnits*x) * price));
-        return Mono.just(priceForOneUnit);
+        return Mono.just((((int) (numOfItems/x)) * y) + ((numOfItems - ((int) (numOfItems/x))*x) * price));
     }
 
     @Override

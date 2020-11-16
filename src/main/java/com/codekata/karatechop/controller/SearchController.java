@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
-import javax.crypto.SealedObject;
-import java.util.ArrayList;
+import java.util.List;
 
 @RequestMapping("/search")
 @RestController
@@ -22,7 +21,7 @@ public class SearchController {
     private SearchIndex searchIndex;
 
     @GetMapping
-    public Mono<ResponseEntity<Integer>> searchResult(@RequestParam(value = "arr")ArrayList<Integer> arr,
+    public Mono<ResponseEntity<Integer>> searchResult(@RequestParam(value = "arr") List<Integer> arr,
                                                       @RequestParam(value = "integer")Integer integer,
                                                       @RequestParam(value = "type") String type){
         return searchIndex.getIndex(arr, integer, type)
