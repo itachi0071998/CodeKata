@@ -1,0 +1,5 @@
+I have applied four different type of search
+one is simple search
+two are binary search with two different type one is using while loop and one is using recursion approach
+I have made a get method for endpoints
+the problem with get method will be  that we can send only a limited size of array because of the constraint in length of url
