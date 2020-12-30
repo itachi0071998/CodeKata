@@ -1,0 +1,20 @@
+This problem is not a coding one just a thinking problem
+1: Roughly how many binary digits (bit) are required for the unsigned representation of:
+
+   1,000 : 9 bits as 2^9 is 512 which is just less than the 1024 that is 2^10 and it will accomodate this one
+   1,000,000 : so for rough estimation 1000 * 1000 which may also written by (2**10) * (2**10) which is 20 which will be greater that this so 19 will be able to accomodate this
+   1,000,000,000 : Similar to the above one 29
+   1,000,000,000,000 : 39
+   8,000,000,000,000 : with the above logic 2**43 will be more than this so 42 will be able to accomodate this
+   These above are the rough estimation done by me it may not be the exact no. of bits
+
+2: My town has approximately 20,000 residences. How much space is required to store the names, addresses, and a phone number for all of these (if we store them as characters)?
+
+    let's assume we use 30 character for name and 100 character for address and 10 character(assuming number are listed in form of character) and 1 char = 1 byte
+    so 140*20000 bytes we will be needing which is 2800000 bytes or 2.8 mb
+
+3: I’m storing 1,000,000 integers in a binary tree. Roughly how many nodes and levels can I expect the tree to have? Roughly how much space will it occupy on a 32-bit architecture?
+
+    nodes = 1000000 as equal to the number of integer and level = log2(nodes) which will approximately 20
+    about space I am not sure how much will it take **************
+
