@@ -28,6 +28,6 @@ public class TernarySearch implements Search {
 
     @Override
     public Class getSearch() {
-        return null;
+        return TernarySearch.class;
     }
 }
